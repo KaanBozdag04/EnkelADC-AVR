@@ -1,11 +1,11 @@
 MCU = atmega328p
 F_CPU = 16000000UL
 TARGET = main
-CC="C:\avr\bin\avr-gcc"
-OBJCOPY="C:\avr\bin\avr-objcopy"
-CFLAGS = -mmcu=$(MCU) -DF_CPU=$(F_CPU) -Wall -Os -I./drive
+CC = avr-gcc
+OBJCOPY = avr-objcopy
+CFLAGS = -mmcu=$(MCU) -DF_CPU=$(F_CPU) -Wall -Os -I.
 
-SRC = main.c
+SRC = main.c LED_driver.c
 OBJ = $(SRC:.c=.o)
 
 all: $(TARGET).hex
